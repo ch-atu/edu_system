@@ -71,6 +71,5 @@ def init_db(DBSettings):
         print("{0}表初始化成功！".format(tableIndex["table"]))
 
 
-if __name__ == '__main__':
-    init_db(DATABASES_settings)
+# d
 
