@@ -131,8 +131,7 @@ class Score_search(TeacherView):
             if "teacher" in query:
                 Score_instance = Score_instance.filter(open__teacher=query["teacher"])
             if "student" in query:
-                Score_instance = Score_instance.filter(
-                    student=query["student"])
+                Score_instance = Score_instance.filter(student=query["student"])
             if "open" in query:
                 Score_instance = Score_instance.filter(open=query["open"])
             if "semester" in query:
@@ -143,6 +142,8 @@ class Score_search(TeacherView):
                 Score_instance = Score_instance.filter(open__course=query["course"])
             if "course_time" in query:
                 Score_instance = Score_instance.filter(open__course_time=query["course_time"])
+            if "course_id" in query:
+                Score_instance = Score_instance.filter(open__course_id=query["course_id"], student_id=query["student"])
         except md.ScoreTable.DoesNotExist:
             data = {
                 'msg': 'error',

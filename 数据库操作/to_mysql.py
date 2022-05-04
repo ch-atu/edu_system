@@ -1,8 +1,7 @@
 import pandas as pd
 import pymysql
 
-db = pymysql.connect(host='119.29.139.149', user='root', password='1234', port=3306, db='schoolnew')
-# db = pymysql.connect(host='127.0.0.1', user='root', password='1234', port=3306, db='schoolnew')
+db = pymysql.connect(host='127.0.0.1', user='root', password='1234', port=3306, db='schoolnew')
 cursor = db.cursor()
 print(cursor)
 print('开始初始化数据库信息...')

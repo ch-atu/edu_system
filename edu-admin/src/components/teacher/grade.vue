@@ -91,7 +91,7 @@
                 type="text"
                 icon="el-icon-circle-plus-outline"
                 size="medium"
-                @click="showAddDialog(scope.row.student.user.user_id)"
+                @click="showAddDialog(scope.row.student.user.user_id, scope.row.open.course.course_id)"
                 >上传成绩</el-button
               >
             </template>
@@ -254,14 +254,15 @@ export default {
       this.$refs.addFormRef.resetFields()
     },
     // 载入学生信息
-    async showAddDialog(id) {
+    async showAddDialog(id,course_id) {
       console.log(id) //get每行的学生学号
+      console.log(course_id) //get每行的课程号
       this.addDialogVisible = true
       const { data: res } = await this.$http.get('teacher/score/search/', {
-        params: { student: id, teacher: sessionStorage.getItem('user') },
+        params: { student: id, teacher: sessionStorage.getItem('user'), course_id },
       })
       if (res.status !== 200) return this.$message.error('获取学生列表失败')
-      console.log(res.data)
+      console.log('数据表信息',res.data)
 
       this.addForm.user_id = res.data.Scores[0].student.user.user_id
       this.addForm.user_name = res.data.Scores[0].student.user.user_name

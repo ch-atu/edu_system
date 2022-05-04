@@ -14,6 +14,7 @@ import pandas as pd
 # mysql+pymysql://<user>:<password>@<hostname>:<port>/<database name>
 # 如下所示：
 mysql = "mysql+pymysql://root:1234@127.0.0.1:3306/schoolnew"
+# mysql = "mysql+pymysql://mysql账号:mysql密码@127.0.0.1:3306/mysql数据库名"
 
 
 DBSettings = mysql
