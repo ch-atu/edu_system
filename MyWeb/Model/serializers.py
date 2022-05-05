@@ -36,8 +36,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 class StudentSerializer(serializers.ModelSerializer):
     user = UserSerializer(required=False)
-    college = serializers.CharField(
-        source="college.college_id", required=False)
+    college = serializers.CharField(source="college.college_id", required=False)
 
     class Meta:
         model = md.StudentTable
