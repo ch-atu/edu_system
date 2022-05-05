@@ -7,3 +7,4 @@ PyMySQL
 sqlalchemy
 pandas
 mysqlclient
+xlrd
